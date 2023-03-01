@@ -26,7 +26,7 @@ margin_top = 310.0
 margin_right = 690.0
 margin_bottom = 410.0
 rect_min_size = Vector2( 100, 100 )
-text = "+1"
+text = "Tick"
 script = ExtResource( 3 )
 
 [node name="MC_Info" type="MarginContainer" parent="."]
@@ -56,9 +56,17 @@ margin_right = 73.0
 margin_bottom = 23.0
 text = "1"
 
+[node name="Upgrade1Button" type="Button" parent="."]
+margin_left = 39.0
+margin_top = 241.0
+margin_right = 162.324
+margin_bottom = 283.251
+text = "Upgrade 1"
+
 [node name="FrameTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 autostart = true
 
 [connection signal="button_up" from="CC_Buttons/TheButton" to="." method="_on_TheButton_press"]
+[connection signal="button_up" from="Upgrade1Button" to="." method="buy_upgrade" binds= [ 1 ]]
 [connection signal="timeout" from="FrameTimer" to="." method="_on_FrameTimer_timeout"]
